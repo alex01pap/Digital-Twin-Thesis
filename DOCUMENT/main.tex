@@ -24,22 +24,41 @@
 
 \include{cover}
 
-\title{Τίτλος διπλωματικής}
-\author{Όνομα Επίθετο \\
-\href{mailto:empty@auth.gr}{\tl{empty@auth.gr}}}
-\maketitle
+\pagenumbering{roman}
+\setcounter{page}{1}
 
 \tableofcontents
-\thispagestyle{empty}
+\addcontentsline{toc}{chapter}{Περιεχόμενα}
+\clearpage
 
-\include{chapter1}
+\listoffigures
+\addcontentsline{toc}{chapter}{Κατάλογος Εικόνων}
+\clearpage
 
-\appendix
 \include{acronyms}
 
-\selectlanguage{english}
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+\include{chapter4}
+\include{chapter5}
+\include{chapter6}
+\include{chapter7}
+\include{chapter8}
+
+\renewcommand{\bibname}{ΒΙΒΛΙΟΓΡΑΦΙΑ}
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
+
+\appendix
+\part*{ΠΑΡΑΡΤΗΜΑΤΑ}
+\addcontentsline{toc}{part}{ΠΑΡΑΡΤΗΜΑΤΑ}
+\include{appendixA}
+\include{appendixB}
+\include{appendixC}
 
 \end{document}
