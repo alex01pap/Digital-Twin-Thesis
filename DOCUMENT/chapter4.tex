@@ -1,4 +1,4 @@
-\chapter{Τεχνική Υλοποίηση}
+﻿\chapter{Τεχνική Υλοποίηση}
 
 \section{Παραμετροποίηση Πλατφόρμας \en{openHAB} και Υποσύστημα Επικοινωνίας}
 Η ραχοκοκαλιά της επικοινωνίας βασίστηκε στο ελαφρύ πρωτόκολλο \en{MQTT} \cite{OASISMQTT50_2019}. Η διαχείριση του
@@ -74,7 +74,7 @@
 (\texttt{Exceedances++}). Αντίστοιχα, για τη διαχείριση της ενέργειας και της ασφάλειας τροφίμων στο κυλικείο,
 αναπτύχθηκε ο κανόνας \texttt{FridgeGuardian}. Ο κανόνας αυτός ελέγχει τη μεταβλητή κατάστασης της πόρτας
 (\texttt{Door=OPEN}) και εκκινεί έναν εσωτερικό χρονομετρητή (\en{timer}). Εάν ο χρόνος παραμονής υπερβεί τα
-\texttt{45} δευτερόλεπτα (συμβάν \texttt{t_open > 45s}), εκδίδεται αυτοματοποιημένη εντολή (\texttt{Buzzer=ON}) για
+\texttt{45} δευτερόλεπτα (συμβάν \texttt{t\_open > 45s}), εκδίδεται αυτοματοποιημένη εντολή (\texttt{Buzzer=ON}) για
 την αποτροπή απώλειας ψυκτικού φορτίου.
 
 \begin{figure}[htbp]
@@ -82,7 +82,7 @@
 \IfFileExists{images/OpenHAB_Semantic.png}{%
   \includegraphics[width=\textwidth]{images/OpenHAB_Semantic.png}%
 }{%
-  \fbox{\parbox{0.95\textwidth}{\centering Placeholder σημασιολογικού μοντέλου \en{openHAB}.}}%
+  \fbox{\parbox{0.95\textwidth}{\centering Προσωρινή θέση σημασιολογικού μοντέλου \en{openHAB}.}}%
 }
 \caption{Απεικόνιση του Σημασιολογικού Μοντέλου (\en{Semantic Model}) και της ιεραρχίας του κτιρίου στο περιβάλλον ελέγχου του \en{openHAB}.}
 \label{fig:openhab_semantic}
@@ -104,7 +104,7 @@
 \IfFileExists{images/Central_Dashboard.png}{%
   \includegraphics[width=\textwidth]{images/Central_Dashboard.png}%
 }{%
-  \fbox{\parbox{0.95\textwidth}{\centering Placeholder κεντρικής διεπαφής / dashboard.}}%
+  \fbox{\parbox{0.95\textwidth}{\centering Προσωρινή θέση κεντρικής διεπαφής / \en{Dashboard}.}}%
 }
 \caption{Κεντρική διεπαφή οπτικοποίησης και ελέγχου (\en{Dashboard}) της πλατφόρμας \en{DT@Schools}.}
 \label{fig:central_dashboard}
@@ -115,3 +115,4 @@
 πλατφόρμα είναι προσβάσιμη μέσω διαδικτύου στη διεύθυνση \texttt{https://digitaltwin.pi-tech.gr/}. Η φιλοξενία στο
 \en{Cloud} διασφαλίζει υψηλή διαθεσιμότητα και επιτρέπει στη διοίκηση απομακρυσμένη πρόσβαση και έλεγχο των
 εγκαταστάσεων.
+

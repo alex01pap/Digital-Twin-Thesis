@@ -22,6 +22,12 @@
 \def\tl{\textlatin}
 \def\tg{\textgreek}
 \newcommand{\en}[1]{\foreignlanguage{english}{#1}}
+\lstdefinelanguage{JavaScript}{
+  basicstyle=\ttfamily\small,
+  showstringspaces=false,
+  breaklines=true
+}
+\lstdefinelanguage{javascript}[]{JavaScript}{}
 \lstdefinelanguage{json}{
   basicstyle=\ttfamily\small,
   showstringspaces=false,
@@ -64,8 +70,11 @@
 \include{chapter8}
 
 \renewcommand{\bibname}{ΒΙΒΛΙΟΓΡΑΦΙΑ}
+\begingroup
+\selectlanguage{english}
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,references}
+\endgroup
 
 \appendix
 \part*{ΠΑΡΑΡΤΗΜΑΤΑ}
