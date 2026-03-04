@@ -66,6 +66,18 @@
 πλαίσιο αυτό υλοποιήθηκαν αλγόριθμοι αυτοματοποιημένου ελέγχου, όπως ο Αλγόριθμος Ηχητικής Άνεσης, με τον οποίο
 ενεργοποιούνται προειδοποιητικές λυχνίες όταν ο θόρυβος υπερβαίνει τα \texttt{55 dBA}, και ο Αλγόριθμος Κυλικείου
 για την ανίχνευση παρατεταμένου ανοίγματος της πόρτας του ψυγείου.
+
+\begin{lstlisting}[language=Python, caption={Λογική μετάβασης καταστάσεων αλγορίθμου NoiseGuard}, label={lst:noiseguard_algo}]
+IF IsLessonTime() == TRUE:
+    current_LAeq = getSensorData("ClassA_Noise")
+    IF current_LAeq > 55.0 dBA:
+        triggerLamp(ON)
+        incrementCounter("Exceedances")
+        logEvent("Noise Threshold Exceeded")
+    ELSE IF current_LAeq < 50.0 dBA FOR 30 seconds:
+        triggerLamp(OFF)
+\end{lstlisting}
+
 Η λήψη αποφάσεων (\en{Decide phase}) στον πυρήνα του Ψηφιακού Διδύμου εκτελείται μέσω της Μηχανής Κανόνων
 (\en{Rules Engine}) του \en{openHAB}. Για τον έλεγχο της ακουστικής άνεσης αναπτύχθηκε ο αλγόριθμος
 \texttt{NoiseGuard}. Η λογική του αλγορίθμου αξιολογεί την τιμή \texttt{LAeq,10s}. Εάν η τιμή υπερβεί το όριο

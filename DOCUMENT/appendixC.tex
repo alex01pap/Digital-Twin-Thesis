@@ -15,3 +15,17 @@ then
     val th = (CL1_Noise_Threshold.state as Number).floatValue
 end
 \end{lstlisting}
+
+\begin{lstlisting}[language=Java,caption={openHAB Rule: FridgeGuardian},label={lst:fridgeguardian_rule}]
+rule "Fridge Door Alert"
+when
+    Item Canteen_Fridge_Door changed to OPEN
+then
+    createTimer(now.plusSeconds(45), [ |
+        if(Canteen_Fridge_Door.state == OPEN) {
+            Canteen_Buzzer_Cmd.sendCommand(ON)
+            logInfo("Canteen", "Fridge open > 45s!")
+        }
+    ])
+end
+\end{lstlisting}
