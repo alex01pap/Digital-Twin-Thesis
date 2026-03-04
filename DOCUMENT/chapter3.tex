@@ -25,6 +25,17 @@
 ενεργοποιητές (\en{actuators}) για την παροχή οπτικής ανατροφοδότησης στους μαθητές, χρησιμοποιήθηκαν έξυπνοι
 διακόπτες \en{Sonoff Basic R2} με λογισμικό \en{Tasmota}. Το αναλυτικό κοστολόγιο παρατίθεται στο Παράρτημα Α.
 
+\begin{figure}[htbp]
+\centering
+\IfFileExists{images/Hardware_Sensors.png}{%
+  \includegraphics[width=\textwidth]{images/Hardware_Sensors.png}%
+}{%
+  \fbox{\parbox{0.95\textwidth}{\centering Placeholder τυπικής διάταξης υλικού εξοπλισμού \en{IoT}.}}%
+}
+\caption{Τυπική διάταξη του υλικού εξοπλισμού \en{IoT}: Μικροελεγκτής \en{ESP32}, έξυπνος μετρητής \en{Shelly 1PM} και περιφερειακοί αισθητήρες.}
+\label{fig:hardware_components}
+\end{figure}
+
 \section{Αρχιτεκτονική Συστήματος Πέντε Επιπέδων (\en{5-Layer Architecture})}
 Στην αρχιτεκτονική του Ψηφιακού Διδύμου που αναπτύχθηκε (\en{DT@Schools}) υιοθετήθηκε το καθιερωμένο πρότυπο πέντε
 επιπέδων για έξυπνες πανεπιστημιουπόλεις \cite{Ahmed2022IntelligentCampus}. Τα επίπεδα ορίστηκαν ως εξής:
@@ -37,6 +48,17 @@
   \item \textbf{Εικονικό Επίπεδο (\en{Virtual Layer}):} Ψηφιακή αναπαράσταση μέσω του \en{openHAB Semantic Model}.
   \item \textbf{Επίπεδο Υπηρεσιών (\en{Service Layer}):} Μηχανή κανόνων και διεπαφή χρήστη.
 \end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\IfFileExists{images/Data_Flow_Diagram.png}{%
+  \includegraphics[width=\textwidth]{images/Data_Flow_Diagram.png}%
+}{%
+  \fbox{\parbox{0.95\textwidth}{\centering Placeholder διαγράμματος ροής δεδομένων.}}%
+}
+\caption{Διάγραμμα Ροής Δεδομένων (\en{Data Flow Diagram}): Από τη λήψη της μέτρησης θορύβου έως την αυτοματοποιημένη ενεργοποίηση της οπτικής ένδειξης.}
+\label{fig:data_flow}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering

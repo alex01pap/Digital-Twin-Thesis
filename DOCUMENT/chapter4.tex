@@ -24,6 +24,17 @@
 ενεργοποιούνται προειδοποιητικές λυχνίες όταν ο θόρυβος υπερβαίνει τα \texttt{55 dBA}, και ο Αλγόριθμος Κυλικείου
 για την ανίχνευση παρατεταμένου ανοίγματος της πόρτας του ψυγείου.
 
+\begin{figure}[htbp]
+\centering
+\IfFileExists{images/OpenHAB_Semantic.png}{%
+  \includegraphics[width=\textwidth]{images/OpenHAB_Semantic.png}%
+}{%
+  \fbox{\parbox{0.95\textwidth}{\centering Placeholder σημασιολογικού μοντέλου \en{openHAB}.}}%
+}
+\caption{Απεικόνιση του Σημασιολογικού Μοντέλου (\en{Semantic Model}) και της ιεραρχίας του κτιρίου στο περιβάλλον ελέγχου του \en{openHAB}.}
+\label{fig:openhab_semantic}
+\end{figure}
+
 \section{Υποσύστημα Διαχείρισης Δεδομένων}
 Για τη μακροχρόνια ανάλυση, το σύστημα διασυνδέθηκε με τη βάση χρονοσειρών \en{InfluxDB} και το λογισμικό
 \en{Grafana}, ενώ παρέχονται εργαλεία αναλυτικής προσέγγισης για ιστορικά και τρέχοντα δεδομένα.

@@ -1,1 +1,17 @@
 \chapter{Αποσπάσματα Κώδικα και \en{openHAB Rules}}
+
+Ακολουθεί ενδεικτικό απόσπασμα κανόνα (\en{Rule}) που υλοποιήθηκε στο περιβάλλον \en{openHAB} για τον έλεγχο της
+ακουστικής άνεσης (\en{NoiseGuard}) στην εκάστοτε σχολική αίθουσα. Ο κώδικας καταγράφει τις υπερβάσεις θορύβου και
+ενεργοποιεί την οπτική ανατροφοδότηση.
+
+\begin{lstlisting}[language=JavaScript,caption={Ενδεικτικός κανόνας \en{NoiseGuard} σε \en{openHAB}.},label={lst:noiseguard_rule}]
+var int cl1Count = 0
+
+rule "Noise threshold CL1"
+when
+    Item CL1_Noise_dB changed
+then
+    val db = (CL1_Noise_dB.state as Number).floatValue
+    val th = (CL1_Noise_Threshold.state as Number).floatValue
+end
+\end{lstlisting}
