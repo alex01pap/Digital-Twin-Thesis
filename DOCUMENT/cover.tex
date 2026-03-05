@@ -15,7 +15,7 @@
 
 \vspace{\fill}
 
-\LARGE \en{DT@Schools}: Από τα Δεδομένα \en{IoT} στο Ψηφιακό Δίδυμο -- Μελέτη Περίπτωσης σε Σχολικό Κτίριο
+\LARGE Ψηφιακά Δίδυμα στην Εκπαίδευση: Ανάπτυξη Συστήματος \en{IoT} για τη Βελτιστοποίηση της Ενεργειακής Απόδοσης και του Μαθησιακού Περιβάλλοντος
 
 \vspace{\fill}
 
@@ -38,30 +38,21 @@
 
 \chapter*{Περίληψη}
 \addcontentsline{toc}{chapter}{Περίληψη}
-Η παρούσα διπλωματική εργασία πραγματεύεται τον σχεδιασμό, την υλοποίηση και την αξιολόγηση της πλατφόρμας
-\en{DT@Schools}, ενός ολοκληρωμένου Ψηφιακού Διδύμου (\en{Digital Twin}) σχεδιασμένου ειδικά για σχολικά
-περιβάλλοντα και έξυπνες πανεπιστημιουπόλεις (\en{Smart Campuses}). Σε αντίθεση με τα απλά συστήματα
-παρακολούθησης, η προτεινόμενη λύση εγκαθιδρύει αμφίδρομη επικοινωνία μεταξύ του φυσικού και του ψηφιακού χώρου,
-επιτρέποντας τόσο την καταγραφή όσο και τον αυτοματοποιημένο έλεγχο υποδομών. Ο σκοπός της έρευνας είναι
-πολυδιάστατος: η αναβάθμιση του μαθησιακού περιβάλλοντος και της υγείας των μαθητών, η ενίσχυση της ασφάλειας,
-καθώς και η βελτιστοποίηση της λειτουργικής και ενεργειακής διαχείρισης (\en{Facility Management}) της σχολικής
-επιχείρησης.
-
-Ως πεδίο μελέτης περίπτωσης (\en{Case Study}) επιλέχθηκαν τα «Εκπαιδευτήρια Πλάτων» στην Κατερίνη. Το σύστημα
-υλοποιήθηκε χρησιμοποιώντας εξοπλισμό \en{IoT} χαμηλού κόστους (όπως μικροελεγκτές \en{ESP32}, \en{Shelly 1PM}
-και \en{Sonoff}), πρωτόκολλα επικοινωνίας \en{MQTT} και την πλατφόρμα ανοικτού κώδικα \en{openHAB} ως κεντρικό
-πυρήνα. Η προσαρμοσμένη διεπαφή χρήστη προσφέρει διαδραστική \en{2D/3D} οπτικοποίηση των χώρων και δυναμικό
-υπολογισμό του Δείκτη Ποιότητας Εσωτερικού Περιβάλλοντος (\en{IEQ}). Οι βασικοί άξονες παρακολούθησης εστίασαν
-στην ακουστική άνεση των αιθουσών (τήρηση ορίων \en{35 dBA} του \en{WHO}) για την προστασία της μαθησιακής
-συγκέντρωσης, στην παρακολούθηση της ποιότητας αέρα και ασφάλειας, και στην έξυπνη ενεργειακή διαχείριση του
-κυλικείου.
-
-Από την αξιολόγηση των πραγματικών δεδομένων λειτουργίας (Σεπτέμβριος 2024 -- Νοέμβριος 2025) προέκυψε σημαντική
-βελτίωση της ενεργειακής αποδοτικότητας, καταγράφοντας μέση μείωση κατανάλωσης κατά \en{19.7\%}. Παράλληλα, η
-τεχνοοικονομική ανάλυση ανέδειξε την πλήρη βιωσιμότητα της επένδυσης, υπολογίζοντας τον χρόνο απόσβεσης
-(\en{Payback Period}) σε μόλις \en{22} μήνες. Συμπερασματικά, η εργασία αποδεικνύει ότι η τεχνολογία των Ψηφιακών
-Διδύμων μπορεί να μεταμορφώσει ένα εκπαιδευτήριο σε έναν ζωντανό, ασφαλή και ενεργειακά αποδοτικό οργανισμό,
-προσφέροντας ισχυρά παιδαγωγικά και επιχειρηματικά οφέλη.
+Η παρούσα διπλωματική εργασία πραγματεύεται τον σχεδιασμό, την υλοποίηση και την αξιολόγηση μιας ολοκληρωμένης
+πλατφόρμας Ψηφιακού Διδύμου (\en{Digital Twin}), ειδικά προσαρμοσμένης για εκπαιδευτικά περιβάλλοντα. Σε αντίθεση
+με τις παραδοσιακές, αντιδραστικές (\en{reactive}) μεθόδους διαχείρισης κτιρίων, η προτεινόμενη λύση εγκαθιδρύει μια
+αμφίδρομη, πραγματικού χρόνου επικοινωνία μεταξύ του φυσικού σχολικού χώρου και του ψηφιακού του αντιγράφου. Η
+ανάπτυξη του συστήματος ακολούθησε μια αυστηρή διεπιστημονική προσέγγιση. Σε επίπεδο υλικού (\en{Hardware}),
+εγκαταστάθηκε δίκτυο \en{IoT} χαμηλού κόστους (μικροελεγκτές \en{ESP32}, έξυπνοι μετρητές \en{Shelly} και συσκευές
+\en{Sonoff}). Σε επίπεδο λογισμικού (\en{Software}), αναπτύχθηκε μια ισχυρή αρχιτεκτονική (\en{MQTT}, \en{InfluxDB},
+\en{openHAB}), η οποία τροφοδοτεί μια προσαρμοσμένη διεπαφή χρήστη (\en{React 3D Dashboard}) για την οπτικοποίηση
+των δεδομένων. Η έρευνα δομείται πάνω σε τρεις κεντρικούς πυλώνες: (α) τη βελτιστοποίηση του Μαθησιακού
+Περιβάλλοντος (\en{Environmental Quality}), μέσω της παρακολούθησης της ακουστικής άνεσης για την ενίσχυση της
+συγκέντρωσης των μαθητών, (β) την Ενεργειακή Αποδοτικότητα (\en{Energy Efficiency}), με συνεχή καταγραφή ισχύος,
+και (γ) τη Λειτουργική Διαχείριση (\en{Facility Management}) μέσω κεντρικού ελέγχου. Από την πιλοτική εφαρμογή στα
+«Εκπαιδευτήρια Πλάτων», επιτεύχθηκε και επαληθεύτηκε μέση μείωση της ενεργειακής κατανάλωσης κατά σχεδόν 20\%,
+επιβεβαιώνοντας μέσω τεχνοοικονομικής ανάλυσης την υψηλή προστιθέμενη αξία της μετάβασης σε ένα σύγχρονο, Έξυπνο
+Σχολικό Συγκρότημα (\en{Smart Campus}).
 
 \textbf{Λέξεις-Κλειδιά:} Ψηφιακό Δίδυμο, \en{Smart Campus}, Διαδίκτυο των Πραγμάτων (\en{IoT}), Μαθησιακό
 Περιβάλλον, Ενεργειακή Αποδοτικότητα, Ποιότητα Εσωτερικού Περιβάλλοντος (\en{IEQ}).
@@ -69,27 +60,18 @@
 \chapter*{\en{Abstract}}
 \addcontentsline{toc}{chapter}{\en{Abstract}}
 \selectlanguage{english}
-This diploma thesis presents the design, implementation, and evaluation of \en{DT@Schools}, a comprehensive Digital
-Twin platform tailored for educational environments and Smart Campuses. Establishing a bidirectional data flow between
-the physical and digital domains, this system moves beyond simple monitoring (\en{Digital Shadows}) to enable
-automated infrastructure control. This research serves a multi-dimensional purpose: upgrading the learning environment
-and student health, enhancing operational safety, and optimizing the energy and facility management of the school
-administration.
-
-The \en{Platon Schools} in Katerini, Greece, was selected as the case study. The platform integrates low-cost \en{IoT}
-hardware (e.g., \en{ESP32} microcontrollers, \en{Shelly 1PM}, and \en{Sonoff} devices), \en{MQTT} protocols, and the
-open-source \en{openHAB} platform as the integration core. A custom-developed user interface provides interactive
-\en{2D} and \en{3D} spatial visualization and real-time calculation of the Indoor Environmental Quality (\en{IEQ})
-index. The primary control and monitoring axes focused on acoustic comfort in classrooms (adhering to the \en{WHO}
-\en{35 dBA} background noise guidelines) to safeguard student concentration, air quality and safety monitoring, and the
-intelligent energy management of the school canteen.
-
-Evaluation of real-world operational and billing data (\en{September 2024 -- November 2025}) revealed a significant
-improvement in energy efficiency, recording an average reduction in power consumption of \en{19.7\%}. Furthermore, the
-techno-economic analysis highlighted the financial viability of the system, estimating a return-on-investment
-(\en{ROI}) payback period of approximately \en{22} months. In conclusion, this research demonstrates that Digital Twin
-technology can effectively transform an educational institution into a safe, energy-efficient, and intelligent
-ecosystem, offering substantial pedagogical and business benefits.
+This diploma thesis presents the design, implementation, and evaluation of a comprehensive Digital Twin platform
+tailored for educational environments. Shifting away from traditional, reactive facility management methods, the
+proposed solution establishes a bidirectional, real-time communication channel between the physical school environment
+and its digital counterpart. The system's development followed a rigorous interdisciplinary approach. On the hardware
+level, a network of low-cost IoT devices (ESP32 microcontrollers, Shelly smart meters, and Sonoff actuators) was
+deployed. On the software level, a robust architecture (MQTT, InfluxDB, openHAB) was developed to feed a custom-built
+React 3D Dashboard for immersive data visualization. The core of this research is built upon three central pillars:
+(a) Environmental Quality, optimizing the learning environment through strict acoustic monitoring to improve student
+focus; (b) Energy Efficiency, featuring real-time power tracking; and (c) Facility Management, enabling centralized
+control of infrastructure. Following the pilot implementation at "Platon Schools," a verified reduction in energy
+consumption of approximately 20\% was recorded. The accompanying techno-economic analysis confirmed the high added
+value, financial viability, and structural necessity of transitioning towards a modern Smart Campus ecosystem.
 
 \textbf{Keywords:} Digital Twin, Smart Campus, Internet of Things (\en{IoT}), Learning Environment, Energy
 Efficiency, Indoor Environmental Quality (\en{IEQ}).
