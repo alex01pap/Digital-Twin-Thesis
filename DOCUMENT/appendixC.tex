@@ -11,8 +11,8 @@ rule "Noise threshold CL1"
 when
     Item CL1_Noise_dB changed
 then
-    val db = (CL1_Noise_dB.state as Number).floatValue
-    val th = (CL1_Noise_Threshold.state as Number).floatValue
+    val db = (\\en{CL1_Noise_dB.state as Number}).floatValue
+    val th = (\\en{CL1_Noise_Threshold.state as Number}).floatValue
 end
 \end{lstlisting}
 
@@ -22,9 +22,9 @@ when
     Item Canteen_Fridge_Door changed to OPEN
 then
     createTimer(now.plusSeconds(45), [ |
-        if(Canteen_Fridge_Door.state == OPEN) {
-            Canteen_Buzzer_Cmd.sendCommand(ON)
-            logInfo("Canteen", "Fridge open > 45s!")
+        if(\\en{Canteen_Fridge_Door.state == OPEN}) {
+            Canteen_Buzzer_Cmd.sendCommand(\\en{ON})
+            logInfo(\\en{"Canteen", "Fridge open > 45s!"})
         }
     ])
 end
