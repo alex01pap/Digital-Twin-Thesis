@@ -23,7 +23,7 @@
 \def\tg{\textgreek}
 \newcommand{\en}[1]{\foreignlanguage{english}{#1}}
 \renewcommand{\contentsname}{Περιεχόμενα}
-\renewcommand{\listfigurename}{Κατάλογος Εικόνων}
+\renewcommand{\listfigurename}{Κατάλογος Σχημάτων}
 \newcommand{\figureplaceholder}[2][0.82\textwidth]{%
   \fbox{%
     \begin{minipage}[c][0.2\textheight][c]{#1}
@@ -42,7 +42,7 @@
   breaklines=true
 }
 \lstset{
-  basicstyle=\ttfamily\small,
+  basicstyle=\fontencoding{T1}\ttfamily\small,
   columns=fullflexible,
   keepspaces=true,
   breaklines=true,
@@ -61,7 +61,7 @@
 \clearpage
 
 \listoffigures
-\addcontentsline{toc}{chapter}{Κατάλογος Εικόνων}
+\addcontentsline{toc}{chapter}{Κατάλογος Σχημάτων}
 \clearpage
 
 \include{acronyms}
