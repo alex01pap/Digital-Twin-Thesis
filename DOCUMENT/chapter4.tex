@@ -23,18 +23,18 @@
 \subsection{Δομή Ωφέλιμου Φορτίου (JSON Payload)}
 Τα δεδομένα που αποστέλλονται από τους μικροελεγκτές είναι μορφοποιημένα σε JSON (JavaScript Object Notation), επιτρέποντας την ταυτόχρονη αποστολή πολλαπλών μετρικών σε ένα μόνο μήνυμα. Για παράδειγμα, ο αισθητήρας θορύβου συλλέγει ακουστικά δείγματα, εξάγει τη μέση στάθμη ηχητικής πίεσης (LAeq) εντός της RAM του μικροελεγκτή μέσω τοπικής προεπεξεργασίας (\en{edge processing}) και αποστέλλει ένα ωφέλιμο φορτίο της μορφής:
 
-\begin{verbatim}
+\begin{lstlisting}[language=json,caption={Ενδεικτικό JSON payload τηλεμετρίας θορύβου.},label={lst:json_noise_payload}]
 {
   "device_id": "esp32_mic_gymA",
   "dba": 58.4,
   "timestamp": 1737811200000,
   "status": "online"
 }
-\end{verbatim}
+\end{lstlisting}
 
 \begin{figure}[htbp]
 \centering
-% [PLACEHOLDER: ΕΙΚΟΝΑ 4.1 - Διάγραμμα Ροής MQTT (Topics, Publish/Subscribe, Broker)]
+\figureplaceholder{[PLACEHOLDER: ΕΙΚΟΝΑ 4.1 \\ Διάγραμμα Ροής MQTT \\ (Topics, Publish/Subscribe, Broker)]}
 \caption{Σχηματική αναπαράσταση της δρομολόγησης των MQTT Topics ανά φυσικό χώρο}
 \label{fig:mqtt_flow}
 \end{figure}
@@ -67,7 +67,7 @@
 
 Η λογική (Sense-Decide-Act) λειτουργεί ως εξής: Εάν η τιμή του Item \texttt{GymA_Noise_dBA} ξεπεράσει το όριο των 55 dBA για ένα συνεχές χρονικό παράθυρο (π.χ. 15 δευτερόλεπτα), το σύστημα αποστέλλει εντολή (\texttt{sendCommand(ON)}) στο Item \texttt{GymA_Lamp}. Ταυτόχρονα, αυξάνει έναν εσωτερικό μετρητή (\texttt{GymA_Exceed_Count}), ο οποίος καταγράφει το πλήθος των παραβιάσεων ανά διδακτική ώρα, επιτρέποντας στους εκπαιδευτικούς να εξάγουν χρήσιμα στατιστικά συμπεριφοράς στο τέλος της ημέρας. Εάν η τιμή πέσει κάτω από το όριο (συν ένα περιθώριο υστέρησης/hysteresis για αποφυγή φαινομένου flickering), η λυχνία απενεργοποιείται.
 
-\begin{verbatim}
+\begin{lstlisting}[language=javascript,caption={Ενδεικτικό απόσπασμα λογικής JavaScript για τον κανόνα NoiseGuard.},label={lst:noiseguard_js}]
 // Ενδεικτικό απόσπασμα λογικής JavaScript για τον κανόνα NoiseGuard
 var currentNoise = items.getItem("GymA_Noise_dBA").state;
 var threshold = 55.0;
@@ -77,7 +77,7 @@ if (isLessonTime == "ON" && currentNoise > threshold) {
   items.getItem("GymA_Lamp").sendCommand("ON");
   // Αύξηση μετρητή υπερβάσεων
 }
-\end{verbatim}
+\end{lstlisting}
 
 \subsection{Κανόνας Ενεργειακής και Λειτουργικής Διαχείρισης Κυλικείου (FridgeGuardian)}
 Αντίστοιχα, αναπτύχθηκε ο κανόνας \texttt{FridgeGuardian} για την προστασία των αλλοιώσιμων προϊόντων και τη μείωση των κρυφών φορτίων (phantom loads). Το σύστημα παρακολουθεί την κατάσταση της μαγνητικής επαφής της πόρτας του επαγγελματικού ψυγείου.
@@ -109,7 +109,7 @@ if (isLessonTime == "ON" && currentNoise > threshold) {
 
 \begin{figure}[htbp]
 \centering
-% [PLACEHOLDER: ΕΙΚΟΝΑ 4.2 - Στιγμιότυπο από το 3D React Dashboard / Floorplan του σχολείου]
+\figureplaceholder{[PLACEHOLDER: ΕΙΚΟΝΑ 4.2 \\ Στιγμιότυπο από το 3D React Dashboard \\ ή το floorplan του σχολείου]}
 \caption{Απεικόνιση της Διεπαφής Χρήστη και της δυναμικής τρισδιάστατης χαρτογράφησης (Procedural 3D Viewer)}
 \label{fig:virtual_dashboard}
 \end{figure}
